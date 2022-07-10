@@ -1,3 +1,9 @@
 class BakedGood < ActiveRecord::Base
-  # add association macro here
+  belongs_to :bakery
+
+  def self.by_price
+    # sorted by price in descending order
+    # binding.pry
+    self.order(price: :desc)
+  end
 end
